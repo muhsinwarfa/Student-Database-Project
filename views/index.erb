@@ -1,0 +1,11 @@
+<h3>The movies currently in our database:</h3>
+
+<%@movies.each do |id,name|%>
+	<ul>
+		<li>
+			<a href="/movies/<%=id%>"></a>
+			<a href="/movies/<%=id%>/edit" class= "button tiny radius round"> Edit</a>
+			<a href="/movies/<%=id%>" class = "button tiny radius round"> Delete</a>
+		</li>
+	</ul>
+<%end%>
