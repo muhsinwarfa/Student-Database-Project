@@ -1,11 +1,16 @@
-<h3>The movies currently in our database:</h3>
 
-<%@movies.each do |id,name|%>
+
+<h3>The students we have in our database are: </h3>
+
+<%@students.each do |id, firstname, lastname, major , email|%>
 	<ul>
 		<li>
-			<a href="/movies/<%=id%>"></a>
-			<a href="/movies/<%=id%>/edit" class= "button tiny radius round"> Edit</a>
-			<a href="/movies/<%=id%>" class = "button tiny radius round"> Delete</a>
+			<h4 style="color:white;"> First Name: <%=firstname%></h4>
+			<h4 style="color:white;"> Last Name: <%=firstname%></h4>
+			<h4 style="color:white;"> Major: <%=major%></h4>
+			<h4 style="color:white;"> Email Address: <%=email%></h4>
+			<a href="/students/<%=id%>/edit" class= "button tiny radius round"> Edit</a>
+			<a href="/students/<%=id%>" class = "button tiny radius round"> Delete</a>
 		</li>
 	</ul>
 <%end%>

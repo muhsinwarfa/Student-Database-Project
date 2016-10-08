@@ -4,8 +4,8 @@ class DBHandler
 
 	def initialize()
 		begin
-			db = SQLite3::Database.open "movie.db"
-			dbstatement = "CREATE TABLE IF NOT EXISTS Movies(ID INTEGER PRIMARY KEY , Name TEXT)"
+			db = SQLite3::Database.open "student.db"
+			dbstatement = "CREATE TABLE IF NOT EXISTS Students(ID INTEGER PRIMARY KEY , firstname TEXT , lastname TEXT , major TEXT , email TEXT)"
 			db.execute dbstatement
 		rescue SQLite3::Exception => e
 			puts "Exception 0ccured"
@@ -15,10 +15,10 @@ class DBHandler
 		end
 	end
 
-	def create(val)
+	def create(firstname , lastname , major , email)
 		begin
-			db = SQLite3::Database.open "movie.db"
-			dbstatement = "INSERT INTO Movies(Name) VALUES ('#{val}')"
+			db = SQLite3::Database.open "student.db"
+			dbstatement = "INSERT INTO students(firstname , lastname , major , email) VALUES ('#{firstname}' , '#{lastname}' ,'#{major}' , '#{email}')"
 			db.execute dbstatement
 		rescue SQLite3::Exception => e 
 			puts "Exception Occured"
@@ -31,8 +31,8 @@ class DBHandler
 
 	def all()
 		begin
-			db = SQLite3::Database.open "movie.db"
-			dbstatement = "SELECT * FROM Movies"
+			db = SQLite3::Database.open "student.db"
+			dbstatement = "SELECT * FROM Students"
 			db.execute dbstatement
 		rescue SQLite3::Exception => e
 			puts "Exception Occured"
@@ -44,8 +44,8 @@ class DBHandler
 
 	def get(val)
 		begin 
-			db = SQLite3::Database.open "movie.db"
-			dbstatement = "SELECT * FROM Movies WHERE id = '#{val}'"
+			db = SQLite3::Database.open "student.db"
+			dbstatement = "SELECT * FROM Students WHERE id = '#{val}'"
 			db.execute dbstatement
 		rescue SQLite3::Exception => e
 			puts "Exception Occured"
@@ -57,10 +57,10 @@ class DBHandler
 
 	
 
-	def update(id , name)
+	def update(firstname , lastname , major , email)
 		begin
-			db = SQLite3::Database.open "movie.db"
-			dbstatement = "UPDATE Movies SET Name= '#{name}' WHERE id= '#{id}'"
+			db = SQLite3::Database.open "student.db"
+			dbstatement = "UPDATE Students SET firstname = '#{firstname}' , lastname = '#{lastname}' , major = '#{major}' , email = '#{email}'"
 			db.execute dbstatement
 		rescue SQLite3::Exception => e
 			puts "Exception Occured"
@@ -72,8 +72,8 @@ class DBHandler
 
 	def destroy(id)
 		begin
-			db = SQLite3::Database.open "movie.db"
-			dbstatement = "DELETE FROM Movies WHERE id='#{id}'"
+			db = SQLite3::Database.open "student.db"
+			dbstatement = "DELETE FROM Students WHERE id='#{id}'"
 			db.execute dbstatement
 		rescue SQLite3::Exception => e
 			puts "Exception Occured"

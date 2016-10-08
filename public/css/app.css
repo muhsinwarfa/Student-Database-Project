@@ -5,7 +5,9 @@ body {
     background-repeat: no-repeat;
     position: relative;
 }
-
+h4{
+    color: white;
+}
 .overlay {
     background-color: rgba(0, 0, 0, 0.8);
     bottom: 0;

@@ -1,18 +1,27 @@
-<form action="/movies" method = "post">
+<form action="/students" method = "post">
 	<div class="row">
 		<div class="large-6 columns">
 			<div class="row collapse pefix-radius">
 				<div class="small-3 columns">
-					<span class="prefix">Movie name:</span>
+					<span class="prefix">First name:</span>
+					<input type="text" name="firstname">
+					<span class="prefix">Last name:</span>
+					<input type="text" name="lastname">
+					<span class="prefix">Major:</span>
+					<input type="text" name="major">
+					<span class="prefix">Email Address:</span>
+					<input type="text" name="email">
+
+					<input type="submit" class="button" value="Submit">
+
 					
 				</div>
 				<div class="small-9 columns">
-					<input type="text" name="name">
+					
 				</div>
 				
 			</div>
 		</div>
-		<input type="submit" class="button" value="Submit">
 	</div>
 	
 </form>
