@@ -36,7 +36,7 @@ get '/students/:id' do
 	end
 end
 
-post 'students/:id/edit' do
+post '/students/:id' do
 	db = DBHandler.new
 	db.update(params[:id].to_i, params[:firstname], params[:lastname], params[:major] , params[:email])
 	redirect to '/students'

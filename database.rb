@@ -18,7 +18,7 @@ class DBHandler
 	def create(firstname , lastname , major , email)
 		begin
 			db = SQLite3::Database.open "student.db"
-			dbstatement = "INSERT INTO students(firstname , lastname , major , email) VALUES ('#{firstname}' , '#{lastname}' ,'#{major}' , '#{email}')"
+			dbstatement = "INSERT INTO Students(firstname , lastname , major , email) VALUES ('#{firstname}' , '#{lastname}' ,'#{major}' , '#{email}')"
 			db.execute dbstatement
 		rescue SQLite3::Exception => e 
 			puts "Exception Occured"
@@ -57,10 +57,10 @@ class DBHandler
 
 	
 
-	def update(firstname , lastname , major , email)
+	def update(val, firstname , lastname , major , email)
 		begin
 			db = SQLite3::Database.open "student.db"
-			dbstatement = "UPDATE Students SET firstname = '#{firstname}' , lastname = '#{lastname}' , major = '#{major}' , email = '#{email}'"
+			dbstatement = "UPDATE Students SET firstname = '#{firstname}' , lastname = '#{lastname}' , major = '#{major}' , email = '#{email}'  WHERE id = '#{val}'"
 			db.execute dbstatement
 		rescue SQLite3::Exception => e
 			puts "Exception Occured"
