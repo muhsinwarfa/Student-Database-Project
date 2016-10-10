@@ -1,10 +1,14 @@
+*{
+    font-family: "Roboto";
+}
 body {
     background-image: url('../img/sinatrapic.jpg');
     background-size: 100% 100%;
-    background-size:cover;
     background-repeat: no-repeat;
     position: relative;
+    background-size:cover;
 }
+
 .yieldwrap{
     color: white;
     margin: 0;
@@ -12,11 +16,23 @@ body {
     padding-top: 20px;
     padding-bottom: 20px;
     margin-left: 220px;
-    
     font-size: 12px;
     font-family: "Roboto";
 
 }
+/*#about{
+    clear: both;
+    color: white;
+    
+    width: 70%;
+    margin: auto;
+    padding: 10px 10px 10px 10px;
+    
+}
+.about h3{
+    font-size: 12px;
+    font-family: "Roboto";
+}*/
 
 h4{
     color: white;
@@ -29,6 +45,10 @@ h4{
     right:0;
     top:0;
     z-index: -77777777;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
 }
 
 
@@ -85,7 +105,9 @@ li>a:hover{
 
 }
 
+/*.row .footer{
 
+}*/
 
 #welcome{
     color: white;
@@ -135,10 +157,21 @@ table, th, td{
 }
 
 .anchor{
+    width: 100%;
+    height: 100%;
     display: block;
-    float: right;
+    background-color: #26E6DD;
+    padding: 5px;
+    text-align: center;
+    color: white;
+/*    border-radius: 5px;
+*/    font-weight: bold;
 
 }
+a.anchor:hover{
+    background-color: rgba(38,230,221,0.7);
+}
+
 
 .displayname{
     font-family: "Roboto";

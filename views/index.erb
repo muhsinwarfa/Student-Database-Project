@@ -5,7 +5,8 @@
 		<tr>
 			<th>First Name</th>
 			<th>Last Name</th>
-			<th>Graduation Status</th>
+			<th>Edit</th>
+			<th>Delete</th>
 		</tr>
 
 <%@students.each do |id, firstname, lastname, major , email|%>
@@ -14,8 +15,8 @@
 			<tr >
 				<td ><a href="/students/<%=id%>"><%=firstname%> </a></td>
 				<td><a href="/students/<%=id%>"><%=lastname%></a></td>
-	 			<a href="/students/<%=id%>/edit" class= "button tiny radius round  anchor"> Edit</a>
-				<a href="/students/<%=id%>/delete" class = "button tiny radius round anchor"> Delete</a>
+				<td><a href="/students/<%=id%>/edit" class= "anchor"> Edit</a></td>
+				<td><a href="/students/<%=id%>/delete" class = "anchor"> Delete</a></td>
 			</tr>
 	
 	
