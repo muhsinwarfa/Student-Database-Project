@@ -22,7 +22,7 @@ end
 
 post '/students' do
 	db = DBHandler.new
-	db.create(params[:firstname], params[:lastname] , params[:major] , params[:email])
+	db.create(params[:firstname], params[:lastname] , params[:major] , params[:email] , params[:graduationstat])
 	redirect to '/students'
 	#store in db
 end
@@ -38,7 +38,7 @@ end
 
 post '/students/:id' do
 	db = DBHandler.new
-	db.update(params[:id].to_i, params[:firstname], params[:lastname], params[:major] , params[:email])
+	db.update(params[:id].to_i, params[:firstname], params[:lastname], params[:major] , params[:email] , params[:graduationstat])
 	redirect to '/students'
 end
 
@@ -53,4 +53,5 @@ end
 get '/students/:id/delete' do
 	db =DBHandler.new
 	db.destroy(params[:id].to_i)
+	redirect to '/students'
 end

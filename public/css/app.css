@@ -140,11 +140,12 @@ table{
 }
 th{
     height: 50px;
-    text-align: left;
+    text-align: center;
     color: black;
 }
 td{
     color: black;
+    text-align: center;
 }
 
 .clickableTableItem{
