@@ -9,6 +9,8 @@ end
 get '/students' do
 	db = DBHandler.new 
 	@students = db.all 
+	@gradstud = db.allgrad
+	@nongrad = db.allnongrad
 	erb :application do #the general feel
 		erb :index #shows the records from the database
 	end

@@ -55,6 +55,34 @@ class DBHandler
 		end 
 	end
 
+	def allgrad()
+	
+			begin
+			db = SQLite3::Database.open "student.db"
+			dbstatement = "SELECT * FROM Students WHERE graduationstat = 'YES'" 
+			db.execute dbstatement
+		rescue SQLite3::Exception => e
+			puts "Exception Occured"
+			puts e
+		ensure 
+			db.close if db
+		end 
+	end
+
+	def allnongrad()
+		
+			begin
+			db = SQLite3::Database.open "student.db"
+			dbstatement = "SELECT * FROM Students WHERE graduationstat = 'NO'" 
+			db.execute dbstatement
+		rescue SQLite3::Exception => e
+			puts "Exception Occured"
+			puts e
+		ensure 
+			db.close if db
+		end 
+	end
+
 	
 
 	def update(val, firstname , lastname , major , email , graduationstat)
@@ -82,4 +110,4 @@ class DBHandler
 			db.close if db
 		end 
 	end
-end			
+end

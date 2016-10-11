@@ -1,7 +1,9 @@
 
 
 <h3>The students we have in our database are: </h3>
-<table class="tableclass">
+
+<!-- SHOWS ALL THE STUDENTS -->
+	<table class="tableclass">
 		<tr>
 			<th>First Name</th>
 			<th>Last Name</th>
@@ -9,10 +11,57 @@
 			<th>Edit</th>
 			<th>Delete</th>
 		</tr>
+	<%@students.each do |id, firstname, lastname, major , email , graduationstat|%>	
+		<tr >
+			<td ><a href="/students/<%=id%>"><%=firstname%> </a></td>
+			<td><a href="/students/<%=id%>"><%=lastname%></a></td>
+			<td><a href="/students/<%=id%>"><%=graduationstat%></a></td>
+			<td><a href="/students/<%=id%>/edit" class= "anchor"> Edit</a></td>
+			<td><a href="/students/<%=id%>/delete" class = "anchor"> Delete</a></td>
+		</tr>
+	<%end%>
+	</table>
+	<br>
+	<br>
+	<h3>List of Students who have graduated:</h3>
 
-<%@students.each do |id, firstname, lastname, major , email , graduationstat|%>
+<!-- SHOWS GRADUATED STUDENTS -->
+<table class="tableclass">
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Graduation Status</th>
+				<th>Edit</th>
+				<th>Delete</th>
+			</tr>
 
-		
+	<%@gradstud.each do |id, firstname, lastname, major , email , graduationstat|%>
+
+			
+				<tr >
+					<td ><a href="/students/<%=id%>"><%=firstname%> </a></td>
+					<td><a href="/students/<%=id%>"><%=lastname%></a></td>
+					<td><a href="/students/<%=id%>"><%=graduationstat%></a></td>
+					<td><a href="/students/<%=id%>/edit" class= "anchor"> Edit</a></td>
+					<td><a href="/students/<%=id%>/delete" class = "anchor"> Delete</a></td>
+				</tr>		
+	<%end%>
+	</table>
+	<br>
+	<br>
+	<h3>List of Students who are currently enrolled:</h3>
+
+<!-- SHOWS STUDENTS WHO HAVE NOT GRADUATED -->
+<table class="tableclass">
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Graduation Status</th>
+				<th>Edit</th>
+				<th>Delete</th>
+			</tr>
+
+	<%@nongrad.each do |id, firstname, lastname, major , email , graduationstat|%>
 			<tr >
 				<td ><a href="/students/<%=id%>"><%=firstname%> </a></td>
 				<td><a href="/students/<%=id%>"><%=lastname%></a></td>
@@ -20,10 +69,10 @@
 				<td><a href="/students/<%=id%>/edit" class= "anchor"> Edit</a></td>
 				<td><a href="/students/<%=id%>/delete" class = "anchor"> Delete</a></td>
 			</tr>
-	
-	
-<%end%>
-</table>
+	<%end%>
+	</table>
+	<br>
+	<br>
 
 
 
@@ -34,27 +83,4 @@
 
 
 
-<!-- <h3>The students we have in our database are: </h3>
-<table class="tableclass">
-		<tr>
-			<th>First Name</th>
-			<th>Last Name</th>
-			<th>Major</th>
-			<th>Email Address</th>
-		</tr>
 
-<%@students.each do |id, firstname, lastname, major , email|%>
-
-
-		<tr>
-			<td><%=firstname%> </td>
-			<td><%=lastname%></td>
-			<td><%=major%></td>
-			<td><%=email%></td>
-			<a href="/students/<%=id%>/edit" class= "button tiny radius round  anchor"> Edit</a>
-			<a href="/students/<%=id%>/delete" class = "button tiny radius round anchor"> Delete</a>
-		</tr>
-	
-	
-<%end%>
-</table> -->
